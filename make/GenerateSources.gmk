@@ -77,6 +77,13 @@ ifneq ($(OPENJDK_TARGET_OS), windows)
     include gensrc/GensrcX11Wrappers.gmk
     GENSRC += $(GENSRC_X11WRAPPERS)
   endif
+
+  ifndef BUILD_HEADLESS_ONLY
+    ifneq ($(OPENJDK_TARGET_OS), macosx)
+      include gensrc/GensrcX11Wrappers.gmk
+      GENSRC += $(GENSRC_X11WRAPPERS)
+    endif
+  endif
 endif
 
 include gensrc/GensrcCLDR.gmk
