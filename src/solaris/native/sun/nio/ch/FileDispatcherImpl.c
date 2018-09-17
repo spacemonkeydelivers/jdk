@@ -45,7 +45,7 @@
 #include "nio.h"
 #include "nio_util.h"
 
-#if defined(ALLBSD_SOURCE) || defined(__riscv64)
+#if defined(ALLBSD_SOURCE) || defined(RISCV64)
 #define stat64 stat
 #define flock64 flock
 #define off64_t off_t
